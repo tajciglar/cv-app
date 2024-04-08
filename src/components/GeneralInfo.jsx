@@ -1,5 +1,4 @@
 import {useState} from "react";
-import Buttons from "./Buttons";
 
 export default function GeneralInfo ({ editable }) {
   const [name, setName] = useState('')

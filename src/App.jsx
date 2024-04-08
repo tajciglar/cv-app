@@ -1,9 +1,10 @@
-import './App.css'
 import { useState } from "react";
-import EducationInfo from './EducationInfo'
-import GeneralInfo from './GeneralInfo'
-import PracticalExpeInfo from './PracticalExpeInfo'
-import Buttons from './Buttons';
+import EducationInfo from './components/EducationInfo'
+import GeneralInfo from './components/GeneralInfo'
+import PracticalExpeInfo from './components/PracticalExpeInfo'
+import Buttons from './components/Buttons';
+import './app.css';
+import Header from "./components/Header";
 
 function App() {
 
@@ -18,9 +19,13 @@ function App() {
 
   return (
     <>
-      <GeneralInfo editable={editable} ></GeneralInfo>
-      <EducationInfo editable={editable} ></EducationInfo>
-      <PracticalExpeInfo editable={editable} ></PracticalExpeInfo>
+      <Header></Header>
+      <div className="content">
+        <GeneralInfo editable={editable} ></GeneralInfo>
+        <EducationInfo editable={editable} ></EducationInfo>
+        <PracticalExpeInfo editable={editable} ></PracticalExpeInfo>
+      </div>
+      
       <Buttons handleSubmit={handleSubmit} handleEdit={handleEdit}></Buttons>
     </>
   )

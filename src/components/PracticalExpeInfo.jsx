@@ -1,4 +1,3 @@
-import Buttons from "./Buttons"
 
 import { useState } from "react";
 export default function PracticalExpeInfo({ editable}) {
