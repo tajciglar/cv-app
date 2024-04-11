@@ -13,6 +13,11 @@ import CVExample from "./components/CVExample";
 function App() {
 
   const [editable, setEditable] = useState(true);
+  const [generalInfo, setGeneralInfo] = useState({
+    name: '',
+    email: '',
+    number: ''
+  });
 
   const handleSubmit = () => {
     setEditable(false);
@@ -26,7 +31,7 @@ function App() {
       <Header></Header>
       <div className="content">
         <div className="componentContent">
-          <GeneralInfo editable={editable} ></GeneralInfo>
+          <GeneralInfo editable={editable} setGeneralInfo={setGeneralInfo}></GeneralInfo>
           <EducationInfo editable={editable} ></EducationInfo>
           <PracticalExpeInfo editable={editable} ></PracticalExpeInfo>
           <div>
@@ -34,7 +39,7 @@ function App() {
           </div>
         </div>
         <div className="CVcontent">
-          <CVExample></CVExample> 
+          <CVExample generalInfo={generalInfo}></CVExample> 
         </div>
       </div>
       <Footer></Footer>

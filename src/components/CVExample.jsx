@@ -1,7 +1,11 @@
-export default function CVExample () {
+export default function CVExample ({generalInfo}) {
     return (
         <div className="cv">
-            dadaa
+            <div className="generalInfoCv">
+                {generalInfo.name}
+                {generalInfo.email}
+                {generalInfo.number}
+            </div>
         </div>
     )
 }
