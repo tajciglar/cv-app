@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export default function GeneralInfo({ editable, setGeneralInfo }) {
-  const [generalInfo, setGeneralInfoLocal] = useState({
+  const [generalInfoLocal, setGeneralInfoLocal] = useState({
     name: '',
     email: '',
     number: ''
@@ -14,23 +14,21 @@ export default function GeneralInfo({ editable, setGeneralInfo }) {
       ...prevState,
       [name]: value
     }));
+    setGeneralInfo(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   };
-
-  // Pass the updated generalInfo state to the parent component (App)
-  // when editable status changes or generalInfo state changes
-  useEffect(() => {
-    setGeneralInfo(generalInfo);
-  }, [editable, generalInfo, setGeneralInfo]);
 
   return (
     <div className="container">
       <h3>General Information:</h3>
-      <label>Name:<input name="name" type="text" value={generalInfo.name} onChange={handleChange} disabled={!editable} />
+      <label>Name:<input name="name" type="text" value={generalInfoLocal.name} onChange={handleChange} disabled={!editable} />
       </label>
-      <label>Email: <input name="email" type="email" value={generalInfo.email} onChange={handleChange} disabled={!editable} />
+      <label>Email: <input name="email" type="email" value={generalInfoLocal.email} onChange={handleChange} disabled={!editable} />
       </label>
       <label>
-        Phone number:<input name="number" type="tel" value={generalInfo.number} onChange={handleChange} disabled={!editable} />
+        Phone number:<input name="number" type="tel" value={generalInfoLocal.number} onChange={handleChange} disabled={!editable} />
       </label>
     </div>
   );

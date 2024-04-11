@@ -18,6 +18,19 @@ function App() {
     email: '',
     number: ''
   });
+  const [educationalInfo, setEducationalInfo] = useState({
+    school: '',
+    title: '',
+    dateOfStudy: ''
+  });
+
+  const [practicalInfo, setPracticalInfo] = useState({
+    companyName: '',
+    title: '',
+    text: '',
+    startDate: '',
+    endDate: ''
+  });
 
   const handleSubmit = () => {
     setEditable(false);
@@ -32,14 +45,14 @@ function App() {
       <div className="content">
         <div className="componentContent">
           <GeneralInfo editable={editable} setGeneralInfo={setGeneralInfo}></GeneralInfo>
-          <EducationInfo editable={editable} ></EducationInfo>
-          <PracticalExpeInfo editable={editable} ></PracticalExpeInfo>
+          <EducationInfo editable={editable} setEducationalInfo={setEducationalInfo}></EducationInfo>
+          <PracticalExpeInfo editable={editable} setPracticalInfo={setPracticalInfo}></PracticalExpeInfo>
           <div>
           <Buttons handleSubmit={handleSubmit} handleEdit={handleEdit}></Buttons>
           </div>
         </div>
         <div className="CVcontent">
-          <CVExample generalInfo={generalInfo}></CVExample> 
+          <CVExample generalInfo={generalInfo} educationalInfo={educationalInfo} practicalInfo={practicalInfo}></CVExample> 
         </div>
       </div>
       <Footer></Footer>

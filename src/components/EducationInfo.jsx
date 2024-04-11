@@ -1,22 +1,35 @@
-import { useState } from "react";
-import Buttons from "./Buttons";
+import React, { useState } from "react";
 
-export default function EducationInfo ({ editable}) {
-    const [school, setSchool] = useState('');
-    const [title, setTitle] = useState('');
-    const [dateOfStudy, setDateOfStudy] = useState();
-   
+export default function EducationInfo({ editable, setEducationalInfo }) {
+    const [educationalInfoLocal, setEducationalInfoLocal] = useState({
+        school: '',
+        title: '',
+        dateOfStudy: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setEducationalInfoLocal(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+        setEducationalInfo(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
     return (
         <div className="container">
             <h3>Education Information:</h3>
             <label>
-                School: <input type="text" value={school} onChange={(e) => setSchool(e.target.value)} disabled={!editable}></input>
+                School: <input name="school" type="text" value={educationalInfoLocal.school} onChange={handleChange} disabled={!editable} />
             </label>
             <label>
-                Title of study: <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} disabled={!editable}></input>
+                Title of study: <input name="title" type="text" value={educationalInfoLocal.title} onChange={handleChange} disabled={!editable} />
             </label>
             <label>
-                Date of study: <input type="date" value={dateOfStudy} onChange={(e) => setDateOfStudy(e.target.value)} disabled={!editable}></input>
+                Date of study: <input name="dateOfStudy" type="date" value={educationalInfoLocal.dateOfStudy} onChange={handleChange} disabled={!editable} />
             </label>
         </div>
     );
