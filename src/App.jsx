@@ -6,6 +6,7 @@ import Buttons from './components/Buttons';
 import './app.css';
 import './styles/buttons.css';
 import './styles/footer.css';
+import './styles/cvExample.css'
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CVExample from "./components/CVExample";

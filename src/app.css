@@ -10,8 +10,15 @@ header {
     justify-content: center;
 }
 
+label {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
 input {
-    width: 400px;
+    width: 350px;
+    min-width: 200px;
     height: 30px;
     border: 0;
     background-color: #ececec;
@@ -19,6 +26,20 @@ input {
     border-radius: 5px;
     margin: 10px 0 20px;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 500px;
+    min-width: 450px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #cecece;
+    margin: 20px;
+    padding: 15px;
+}
+
 .content {
     display: flex;
 }
@@ -29,29 +50,12 @@ input {
     align-items: center;
     gap: 20px;
     padding: 15px;
+    max-width: 1000px;
 }
 
 .CVcontent{
-    width: 50vw;
     border-left: 1px solid #bababa;
     border-radius: 15px 0 0 15px ;
-    padding: 15px;
+    padding: 20px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    width: 550px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px #cecece;
-    margin: 20px;
-    padding: 15px;
-}
-
-label {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}

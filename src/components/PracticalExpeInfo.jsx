@@ -33,7 +33,7 @@ export default function PracticalExpeInfo({ editable, setPracticalInfo}) {
                 Position title: <input type="text" name="title" value={practicalInfoLocal.title} onChange={handleChange} disabled={!editable} />
             </label>
             <label>
-                Main responsibilities: <textarea name="text" value={practicalInfoLocal.text} onChange={handleChange} disabled={!editable} />
+                Main responsibilities: <textarea name="text" rows={10} cols={40} value={practicalInfoLocal.text} onChange={handleChange} disabled={!editable} />
             </label>
             <label>
                 Start date: <input type="date" name="startDate" value={practicalInfoLocal.startDate} onChange={handleChange} disabled={!editable} />
